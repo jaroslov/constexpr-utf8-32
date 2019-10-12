@@ -4,6 +4,8 @@
 namespace CXUTF8232
 {
 
+static_assert(sizeof(signed long) * 8 > 21, "The local 'signed long' is insufficiently wide to represent all unicode points.");
+
 template <int K>
 constexpr unsigned long utf32chk(const char (&msg)[K], int at=0)
 {
